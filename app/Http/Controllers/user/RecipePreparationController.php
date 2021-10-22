@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\RecipePreparationRequest;
 
 class RecipePreparationController extends Controller
 {
@@ -33,7 +33,7 @@ class RecipePreparationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RecipePreparationRequest $request)
     {
         //
     }
@@ -67,7 +67,7 @@ class RecipePreparationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RecipePreparationRequest $request, $id)
     {
         //
     }
