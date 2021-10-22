@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\auth\AuthController;
+use App\Http\Controllers\user\{
+    BookController,
+    RecipeController,
+    PersonalDataController,
+    RecipePreparationController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +21,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::resource('/', HomeController::class);
+Route::get('/login', [AuthController::class, 'index']);
+Route::get('/cadastrar', [AuthController::class, 'index']);
+
+Route::prefix('usuario')->group(function () {
+    Route::resource('/', BookController::class);
+    Route::resource('/receita', RecipeController::class);
+    Route::resource('/atualizar', PersonalDataController::class);
 });
+
+Route::resource('/preparo', RecipePreparationController::class);

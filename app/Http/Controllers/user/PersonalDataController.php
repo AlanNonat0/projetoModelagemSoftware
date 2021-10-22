@@ -14,7 +14,7 @@ class PersonalDataController extends Controller
      */
     public function index()
     {
-        //
+        return 'index personal';
     }
 
     /**

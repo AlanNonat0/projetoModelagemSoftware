@@ -14,7 +14,7 @@ class RecipePreparationController extends Controller
      */
     public function index()
     {
-        //
+        return 'index Preparation';
     }
 
     /**
