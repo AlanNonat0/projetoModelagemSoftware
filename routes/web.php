@@ -29,8 +29,6 @@ use App\Http\Controllers\{
 Route::resource('', HomeController::class);
 Route::resource('autenticar', AuthController::class);
 Route::resource('cadastrar', RegisterController::class);
-// Route::get('/cadastrar', [AuthController::class, 'index'])->name('auth.register');
-// Route::get('/registrar', [AuthController::class, 'store'])->name('auth.register');
 Route::get('logout', [AuthController::class, 'logout'])->name('autenticar.logout');
 
 
