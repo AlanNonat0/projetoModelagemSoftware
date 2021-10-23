@@ -1,6 +1,6 @@
 @extends('layouts.layout_base')
 
-@section('title', 'login')
+@section('title', 'Atualizar')
 
 @section('nav_user')
     @include('app.users._partials.nav_user')

@@ -1,6 +1,6 @@
 @extends('layouts.layout_base')
 
-@section('title', 'login')
+@section('title', 'Enviar Receita')
 
 @section('nav_user')
     @include('app.users._partials.nav_user')
