@@ -14,7 +14,7 @@ class AuthController extends Controller
      */
     public function index()
     {
-        return 'index auth';
+        return view('auth');
     }
 
     /**
@@ -81,5 +81,10 @@ class AuthController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function logout()
+    {
+
     }
 }

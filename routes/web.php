@@ -1,12 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\auth\AuthController;
+use App\Http\Controllers\auth\{
+    AuthController,
+    RegisterController
+};
 use App\Http\Controllers\user\{
     BookController,
     RecipeController,
-    PersonalDataController,
+    PersonalDataController
+};
+use App\Http\Controllers\{
+    HomeController,
     RecipePreparationController
 };
 
@@ -21,14 +26,18 @@ use App\Http\Controllers\user\{
 |
 */
 
-Route::resource('/', HomeController::class);
-Route::get('/login', [AuthController::class, 'index']);
-Route::get('/cadastrar', [AuthController::class, 'index']);
+Route::resource('', HomeController::class);
+Route::resource('autenticar', AuthController::class);
+Route::resource('cadastrar', RegisterController::class);
+// Route::get('/cadastrar', [AuthController::class, 'index'])->name('auth.register');
+// Route::get('/registrar', [AuthController::class, 'store'])->name('auth.register');
+Route::get('logout', [AuthController::class, 'logout'])->name('autenticar.logout');
+
 
 Route::prefix('usuario')->group(function () {
-    Route::resource('/', BookController::class);
-    Route::resource('/receita', RecipeController::class);
-    Route::resource('/atualizar', PersonalDataController::class);
+    Route::resource('caderno', BookController::class);
+    Route::resource('receita', RecipeController::class);
+    Route::resource('atualizar', PersonalDataController::class);
 });
 
-Route::resource('/preparo', RecipePreparationController::class);
+Route::resource('preparo', RecipePreparationController::class);
