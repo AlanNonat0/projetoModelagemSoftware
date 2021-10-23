@@ -12,7 +12,7 @@
                 <ul class="list-group list-group-flush">
 
                     <li class="list-group-item py-1">
-                        <img src="{{ asset('img/github.png') }}" alt="Github do Alan" class="circle">
+                        <img src="{{  asset('img/github.png') }}" alt="Github do Alan" class="circle">
                         <span class="title">Alan Nonato</span>
                         <p>Github: <a href="https://github.com/AlanNonat0">https://github.com/AlanNonat0</a></p>
                     </li>
