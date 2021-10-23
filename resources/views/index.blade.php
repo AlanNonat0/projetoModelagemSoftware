@@ -14,14 +14,14 @@
 	  </div>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <div style="min-width: 100%; height: 400px; background-image: url({{ secure_secure_asset('img/slider/bolo.jpg') }}); background-size: cover; background-position:left"> </div>
+	      <div style="min-width: 100%; height: 400px; background-image: url({{ asset('img/slider/bolo.jpg') }}); background-size: cover; background-position:left"> </div>
 	    	 <div class="carousel-caption d-none d-md-block">
 		        <h2 class="text-end font-weight-bold">Bem-vindo ao Sabores</h2>
 		        <p class="text-end">As melhores receitas. A melhor experiência </p>
 		      </div>
 	    </div>
 	    <div class="carousel-item">
-	      <div style="min-width: 100%; height: 400px; background-image: url({{ secure_asset('img/slider/receita.jpg') }}); background-size: cover; background-position:left"> </div>
+	      <div style="min-width: 100%; height: 400px; background-image: url({{ asset('img/slider/receita.jpg') }}); background-size: cover; background-position:left"> </div>
 	    	<div class="carousel-caption ">
 		        <h2 class="text-start font-weight-bold">Guarde suas receitas</h2>
 		        <p class="text-start">Acesse suas receitas favoritas a qualquer momento</p>
@@ -29,7 +29,7 @@
 	    </div>
 	    
 	    <div class="carousel-item">
-	      <div style="min-width: 100%; height: 400px; background-image: url({{ secure_asset('img/slider/macarrao.jpg') }}); background-size: cover; background-position:left"> </div>
+	      <div style="min-width: 100%; height: 400px; background-image: url({{ asset('img/slider/macarrao.jpg') }}); background-size: cover; background-position:left"> </div>
 	    	<div class="carousel-caption ">
 		        <h2 class="text-end font-weight-bold">Compartilhe experiências</h2>
 		        <p class="text-end">Publique e compartilhe suas receitas favoritas</p>
@@ -61,7 +61,7 @@
 	<div class="row mt-4">
 		<div class="col-lg-3 col-sm-6 pb-2">
 			<div class="card border border-dark" style="height: 367.84px !important;">
-			  <img src="{{ secure_asset('img/slider/bolo.jpg') }}" class="card-img-top" alt="Bolo trufado" style="min-height: 206.84px !important">
+			  <img src="{{ asset('img/slider/bolo.jpg') }}" class="card-img-top" alt="Bolo trufado" style="min-height: 206.84px !important">
 			  <div class="card-body">
 			    <h5 class="card-title">Bolo Trufado</h5>
 			    <p class="card-text">Bolo delicioso de chocolate trufado decorado com cerejas.</p>
@@ -74,7 +74,7 @@
 		</div>
 	</div>
 	
-	 <div class="mt-4" style="min-width: 100%; height: 200px; background-image: url({{ secure_asset('img/slider/tempero-2.jpg') }}); background-size: cover; background-position:left"> 
+	 <div class="mt-4" style="min-width: 100%; height: 200px; background-image: url({{ asset('img/slider/tempero-2.jpg') }}); background-size: cover; background-position:left"> 
 	 </div>
 
 			<h3 class="text-white text-center mt-3">Guia geral de como usar e combinar os mais variados temperos</h3>
