@@ -1,6 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\auth\{
+    AuthController,
+    RegisterController
+};
+use App\Http\Controllers\user\{
+    BookController,
+    RecipeController,
+    PersonalDataController
+};
+use App\Http\Controllers\{
+    HomeController,
+    RecipePreparationController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +26,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::resource('', HomeController::class);
+Route::resource('autenticar', AuthController::class);
+Route::resource('cadastrar', RegisterController::class);
+Route::get('logout', [AuthController::class, 'logout'])->name('autenticar.logout');
+
+
+Route::prefix('usuario')->group(function () {
+    Route::resource('caderno', BookController::class);
+    Route::resource('receita', RecipeController::class);
+    Route::resource('atualizar', PersonalDataController::class);
 });
+
+Route::resource('preparo', RecipePreparationController::class);

@@ -1,0 +1,20 @@
+*{
+	font-family: 'Poppins', sans-serif !important;
+}
+
+/* body */
+body{
+    padding-bottom: 6rem
+}
+
+
+
+/* Footer */
+.footer-height{
+    height: 40vh !important;
+    overflow-y: hidden;
+}
+.footer-fix{
+    position: fixed; 
+    bottom: 0;
+}
