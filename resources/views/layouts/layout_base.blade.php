@@ -15,9 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+    <link href="{{ asset('css/app.css', true) }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css', true) }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico', true) }}" type="image/x-icon">
 
 </head>
 
@@ -31,7 +31,7 @@
 
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js', true) }}"></script>
 
     @yield('script')
 
