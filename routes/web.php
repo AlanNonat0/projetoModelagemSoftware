@@ -12,7 +12,7 @@ use App\Http\Controllers\user\{
 };
 use App\Http\Controllers\{
     HomeController,
-    RecipePreparationController
+    RecipePreparationController,
 };
 
 /*
@@ -26,11 +26,12 @@ use App\Http\Controllers\{
 |
 */
 
-Route::resource('', HomeController::class);
 Route::resource('autenticar', AuthController::class);
 Route::resource('cadastrar', RegisterController::class);
 Route::get('logout', [AuthController::class, 'logout'])->name('autenticar.logout');
 
+Route::get('search', [HomeController::class, 'search'])->name('search');
+Route::get('/', [HomeController::class, 'index'])->name('app.index');
 
 Route::prefix('usuario')->group(function () {
     Route::resource('caderno', BookController::class);

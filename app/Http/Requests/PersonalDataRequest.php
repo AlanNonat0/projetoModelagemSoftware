@@ -13,7 +13,7 @@ class PersonalDataRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,6 +22,13 @@ class PersonalDataRequest extends FormRequest
      * @return array
      */
     public function rules()
+    {
+        return [
+            //
+        ];
+    }
+
+    public function messages()
     {
         return [
             //

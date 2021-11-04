@@ -46,33 +46,33 @@
 	    <span class="visually-hidden">Próximo</span>
 	  </button>
 	</div>
+    <!-- End Carousel -->
 
 	<!-- Search -->
 	<div class="row d-flex justify-content-center mt-4">
-		<div class=" col-lg-6 col-12 col-sm-12 col-xl-6">
-			<h4 class="text-white text-center">Encontre aqui as receitas mais saborosas</h4>
-			<form>
-				<input type="text" class="form-control mx-auto" placeholder="Digite aqui sua busca" />
-			</form>
-		</div>
-	</div>
+        <div class=" col-lg-6 col-12 col-sm-12 col-xl-6">
+            <h4 class="text-white text-center">Encontre aqui as receitas mais saborosas</h4>
+            <form action="{{ route('search') }}" method="get" name="home-search" class="home-search">
+                <input type="text" id="home-search-input" name="home-search-input" class="form-control mx-auto"
+                    placeholder="Digite aqui sua busca" />
+            </form>
+        </div>
+    </div>
+    <!-- End Search -->
 
     <!-- Recipes -->
-	<div class="row mt-4">
-		<div class="col-lg-3 col-sm-6 pb-2">
-			<div class="card border border-dark" style="height: 367.84px !important;">
-			  <img src="{{ asset('img/slider/bolo.jpg'), true }}" class="card-img-top" alt="Bolo trufado" style="min-height: 206.84px !important">
-			  <div class="card-body">
-			    <h5 class="card-title">Bolo Trufado</h5>
-			    <p class="card-text">Bolo delicioso de chocolate trufado decorado com cerejas.</p>
-			    <div class="d-flex justify-content-end">
-			    	<a href="{{ route('preparo.index') }}" class="btn-block btn btn-outline-dark btn-sm">Confira aqui</a>
-			    </div>
+	<div class="row mt-4" id="recipeRender">
 
-			  </div>
-			</div>
-		</div>
-	</div>
+    </div>
+    <!-- End Recipes -->
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+
+        </ul>
+    </nav>
+    <!-- End Pagination -->
 
 	 <div class="mt-4" style="min-width: 100%; height: 200px; background-image: url({{ asset('img/slider/tempero-2.jpg'), true }}); background-size: cover; background-position:left">
 	 </div>
@@ -85,4 +85,9 @@
 
 </div>
 
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/home/home_search.js', true) }}"></script>
+    <script src="{{ asset('js/home/home_onload.js', true) }}"></script>
 @endsection
