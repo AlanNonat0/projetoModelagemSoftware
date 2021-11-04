@@ -6,8 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PersonalDataRequest extends FormRequest
 {
-    protected $stopOnFirstFailure = true;
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -26,14 +24,14 @@ class PersonalDataRequest extends FormRequest
     public function rules()
     {
         return [
-            'home-search-input' => 'string|nullable|regex:/^[a-zA-Z0-9]/'
+            //
         ];
     }
 
     public function messages()
     {
         return [
-            'home-search-input.regex' => 'Não utilize caracteres especiais em sua busca'
+            //
         ];
     }
 }

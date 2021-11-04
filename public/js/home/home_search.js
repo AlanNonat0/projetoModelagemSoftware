@@ -32,7 +32,7 @@ $('form.home-search').on("submit",  function (event) {
         error: function (request) {
             var title = 'Erro de Busca!'
 
-            errors(request,  title);
+            errorFromAjax(request,  title);
             $('#home-search-input').val("");
         }
     });
@@ -92,13 +92,15 @@ function rendering(resp, page = 0){
     let html = '';
 
     recipes = resp[page];
+
     if (!recipes) {
-        alert('Pesquisa não encontrada')
+        errorRendering('Erro de Busca!', 404, 'Receita não encontrada')
         home_onload();
-        return
+        return;
     }
-    for(let i = 0; i< recipes.length; i++) {
     
+    for(let i = 0; i< recipes.length; i++) {
+
         html += `
 
         <div class="col-lg-3 col-sm-6 pb-2" id="recipeRender">
