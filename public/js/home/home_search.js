@@ -110,7 +110,7 @@ function rendering(resp, page = 0){
                 <h5 class="card-title">`+recipes[i].name+`</h5>
                 <p class="card-text">`+recipes[i].description+`</p>
                 <div class="d-flex justify-content-end">
-                    <a href="preparo?id=`+recipes[i].id+`" class="btn-block btn btn-outline-dark btn-sm">Confira aqui</a>
+                    <a href="preparo/`+recipes[i].id+`" class="btn-block btn btn-outline-dark btn-sm">Confira aqui</a>
                 </div>
 
             </div>

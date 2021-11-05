@@ -2,7 +2,7 @@
 
 @section('title', 'Atualizar')
 
-@section('nav_user')
+@section('nav_aux')
     @include('app.users._partials.nav_user')
 @endsection
 

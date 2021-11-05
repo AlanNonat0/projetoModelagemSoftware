@@ -3,18 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Service\RecipePreparationService;
 use App\Http\Requests\RecipePreparationRequest;
 
 class RecipePreparationController extends Controller
 {
+    private $service;
+
+    public function __construct(){
+        $this->service = new RecipePreparationService();
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('preparation');
+        $recipe = $this->service->findById($id);
+        return view('site.preparation', ['recipe' => $recipe]);
     }
 
     /**
