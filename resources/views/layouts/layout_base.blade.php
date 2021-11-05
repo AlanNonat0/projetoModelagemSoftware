@@ -24,7 +24,7 @@
 <body class="bg bg-dark">
 
     @include('layouts._partials.nav')
-    @yield('nav_user')
+    @yield('nav_aux')
     @yield('content')
 
 
@@ -35,7 +35,7 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js', true) }}"></script>
     <script src="{{ asset('js/baseUrl.js', true) }}"></script>
     <script src="{{ asset('js/erros.js', true) }}"></script>
-
+    
     @yield('script')
 
     @include('layouts._partials.footer')

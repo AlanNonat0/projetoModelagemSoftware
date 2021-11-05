@@ -1,0 +1,51 @@
+@extends('layouts.layout_base')
+
+@section('title', 'Receita')
+@section('nav_aux')
+    @include('site._partials.nav_global')
+@endsection
+@section('content')
+    <div class="container-fluid">
+
+    @if ($recipe)
+        <div class="row mx-autod-flex  justify-content-center">
+            <div class="col-lg-6 col-xl-6 col-sm-8 col-12  mt-4">
+                <div class="card  bg bg-light mt-2">
+
+                    <div class="card-header ">
+                        <div class="row-12">
+                        <h3 class="text-dark text-center">{{$recipe->name}}</h3>
+                        </div>
+                        <div class="row-12">
+                        <h5 class="text-dark text-center">{{$recipe->description}}</h5>
+                        </div>
+                        <div class="row-12 mt-4">
+                            <div class="col-12">
+                                <div class="d-flex float-start"><small class="text-dark"> Enviado por: {{$recipe->created_by}}</small></div>
+                                <div class="d-flex float-end"><small class="text-dark">{{date('d-m-Y', strtotime($recipe->created_at))}}</small></div>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body mb-4">
+                        <h3 class="mt-4">Ingredientes</h3>
+                        <ul class="mt-3">
+                            @foreach ($recipe->ingredients as $ingredient)
+                                <li class="fw-bold mt-1">{{ $ingredient }}</li>
+                            @endforeach
+                            
+                        </ul>
+                        <h3 class="mt-4">Preparo</h3>
+                        <ol class="mt-3">
+                            @foreach ($recipe->preparation as $preparation)
+                                <li class="fw-bold mt-1">{{ $preparation }}</li>
+                            @endforeach
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @endif
+@endsection

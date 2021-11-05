@@ -9,7 +9,7 @@ function errorFromAjax(request, title){
 
         errorMessage = errors[i][0];
     }
-    
+
     errorRendering(title, statusCode, errorMessage)
 }
 
@@ -17,7 +17,6 @@ function errorFromAjax(request, title){
 // error rendering function
 function errorRendering(title, statusCode, errorMessage){
 
-    
     $("#error-title").html("");
     $("#error-status").html("");
     $("#error-message").html("");

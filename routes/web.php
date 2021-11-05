@@ -31,7 +31,7 @@ Route::resource('cadastrar', RegisterController::class);
 Route::get('logout', [AuthController::class, 'logout'])->name('autenticar.logout');
 
 Route::get('search', [HomeController::class, 'search'])->name('search');
-Route::get('/', [HomeController::class, 'index'])->name('app.index');
+Route::get('/', [HomeController::class, 'index'])->name('site.index');
 
 Route::prefix('usuario')->group(function () {
     Route::resource('caderno', BookController::class);
@@ -39,4 +39,4 @@ Route::prefix('usuario')->group(function () {
     Route::resource('atualizar', PersonalDataController::class);
 });
 
-Route::resource('preparo', RecipePreparationController::class);
+Route::resource('preparo/{id}', RecipePreparationController::class);
