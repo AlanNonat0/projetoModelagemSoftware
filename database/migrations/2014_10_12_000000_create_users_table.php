@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('telephone');
-            $table->boolean('situation');
-            $table->unsignedSmallInteger('type');
+            $table->boolean('situation')->default(true);
+            $table->unsignedSmallInteger('type')->default(1); // 1 - Padrão | 2 - Gold | 3 - Admin
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

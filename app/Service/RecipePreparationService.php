@@ -2,16 +2,25 @@
 
 namespace App\Service;
 
-use App\Models\Recipe;
+use App\Repositories\RecipePreparationRepository;
 
 class RecipePreparationService
 {
-    public function findById($id){
-        $recipe = Recipe::find($id);
+    private $repository;
 
-        $recipe->ingredients = explode('\r\n', $recipe->ingredients);
-        $recipe->preparation = explode('\r\n', $recipe->preparation);
+    public function __construct()
+    {
+        $this->repository = new RecipePreparationRepository();
+    }
 
-        return $recipe;
+    public function findById($id)
+    {
+        $data = $this->repository->findRecipe($id);
+
+        if ($data) {
+            return $data;
+        }
+
+        return null;
     }
 }
