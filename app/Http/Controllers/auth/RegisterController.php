@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\auth;
 
+use App\Service\RegisterService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
+    public function __construct(){
+        $this->service = new RegisterService();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +39,8 @@ class RegisterController extends Controller
      */
     public function store(RegisterRequest $request)
     {
-        //
+        $response = $this->service->registerNewUser($request);
+        return response()->json($response['data'], $response['code']) ;
     }
 
     /**

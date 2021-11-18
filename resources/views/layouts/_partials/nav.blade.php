@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand navbar-light bg-light ">
     <div class="container-fluid">
         <a href="{{ route('site.index') }}" class="navbar-brand d-flex">
-            <img src="{{ asset('img/chef.svg') }}" width="45" height="45" />
+            <img src="{{ asset('img/chef.svg', true) }}" width="45" height="45" />
             <span class="h3 px-2 pt-2">Sabores</span>
         </a>
 

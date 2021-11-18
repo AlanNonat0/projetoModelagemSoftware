@@ -10,3 +10,7 @@
 
     </div>
 @endsection
+
+@section('script')
+    <script src="{{ asset('js/auth/register.js', true) }}"></script>
+@endsection

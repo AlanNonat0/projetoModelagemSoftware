@@ -39,4 +39,4 @@ Route::prefix('usuario')->group(function () {
     Route::resource('atualizar', PersonalDataController::class);
 });
 
-Route::resource('preparo/{id}', RecipePreparationController::class);
+Route::resource('preparo', RecipePreparationController::class);

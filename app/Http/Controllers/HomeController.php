@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\HomeRequest;
 use App\Service\RecipeService;
+use App\Http\Requests\HomeRequest;
 
 class HomeController extends Controller
 {
@@ -23,10 +23,9 @@ class HomeController extends Controller
         return view('site.index');
     }
 
-    public function search(HomeRequest $request)
-    {
+    public function search(HomeRequest $request){
 
-        $data = $this->service->search($request);
+        $data = $this->service->search($request->get('home-search-input'));
         return response()->json($data);
     }
 
