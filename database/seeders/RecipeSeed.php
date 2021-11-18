@@ -21,7 +21,7 @@ class RecipeSeed extends Seeder
                 'description' => 'delicioso bolo de fubá',
                 'category_id' => '1',
                 'ingredients' => '1 ovo\r\n1 copo (americano) de leite\r\n1 copo (americano) de fubá\r\n1 copo (americano) de açúcar\r\n1/2 copo (americano) de óleo\r\n1 copo (americano) farinha de trigo\r\n1 colher de fermento em pó\r\ngoiabada em pedaços\r\nerva-doce a gosto',
-                'preparation' => 'Misture no liquidificador o ovo, o leite, o óleo, o açúcar, o fubá e bata bem.\r\n\Despeje a mistura em uma tigela, e misture com a farinha e o fermento em pó.\r\n\Despeje a massa em uma forma untada com manteiga e farinha, e acrescente uma camada de goiabada. Repita este processo até preencher toda a forma.\r\n\Leve ao forno médio (180° C preaquecido, por 40 minutos.',
+                'preparation' => 'Misture no liquidificador o ovo, o leite, o óleo, o açúcar, o fubá e bata bem.\r\nDespeje a mistura em uma tigela, e misture com a farinha e o fermento em pó.\r\nDespeje a massa em uma forma untada com manteiga e farinha, e acrescente uma camada de goiabada. Repita este processo até preencher toda a forma.\r\nLeve ao forno médio (180° C preaquecido, por 40 minutos.',
                 'save' => 50,
                 'image' => 'default.png',
             ],
