@@ -2,89 +2,32 @@
 
 namespace App\Http\Controllers\auth;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\AuthRequest;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Service\AuthService;
 
 class AuthController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->service = new AuthService();
+    }
+
     public function index()
     {
         return view('site.auth');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function login(AuthRequest $request)
     {
-        //
+        $response = $this->service->authenticate($request);
+        return response()->json($response['data'], $response['code']);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\AuthRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(AuthRequest $request)
+    public function logout(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\AuthRequest  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(AuthRequest $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function logout()
-    {
-
+        $this->service->logout($request);
+        return redirect()->route('site.index');
     }
 }

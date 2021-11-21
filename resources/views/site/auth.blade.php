@@ -13,4 +13,5 @@
 
 @section('script')
     <script src="{{ asset('js/auth/register.js', true) }}"></script>
+    <script src="{{ asset('js/auth/login.js', true) }}"></script>
 @endsection
