@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RegisterRequest;
 use App\Repositories\RegisterRepository;
 
@@ -23,6 +24,7 @@ class RegisterService
         }
 
         if($user){
+           Auth::login($user);
            return ['data' => ['status' => 'success', 'data' => $user], 'code' => 201];
         }
 

@@ -1,4 +1,4 @@
-$('form[name="formRegister"]').on("submit", function (event) {
+$('form[name="formLogin"]').on("submit", function (event) {
     event.preventDefault();
 
     $.ajaxSetup({
@@ -9,7 +9,7 @@ $('form[name="formRegister"]').on("submit", function (event) {
     });
 
     $.ajax({
-        url: baseUrl + "cadastrar",
+        url: baseUrl + "autenticar",
         type: "POST",
         data: $(this).serialize(),
         dataType: "json",
@@ -18,7 +18,7 @@ $('form[name="formRegister"]').on("submit", function (event) {
             window.location.href = baseUrl + "usuario/caderno";
         },
         error: function (request) {
-            var title = "Erro de Cadastro!";
+            var title = "Erro ao entrar!";
             errorFromAjax(request, title);
         },
     });
