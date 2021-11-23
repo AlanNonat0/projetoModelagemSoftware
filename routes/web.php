@@ -46,7 +46,14 @@ Route::middleware('auth.block')->group(function () {
 
 // Area do usuário
 Route::middleware('auth')->prefix('usuario')->group(function () {
-    Route::resource('caderno', BookController::class);
+
+    // Caderno
+    Route::get('caderno', [BookController::class, 'index'])->name('caderno.index');
+    Route::get('caderno/search', [BookController::class, 'search'])->name('caderno.search');
+
+    // Receitas
     Route::resource('receita', RecipeController::class);
+
+    // Dados Pessoais
     Route::resource('atualizar', PersonalDataController::class);
 });

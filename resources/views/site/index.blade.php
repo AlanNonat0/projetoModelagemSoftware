@@ -95,4 +95,5 @@
 @section('script')
     <script src="{{ asset('js/home/home_search.js', true) }}"></script>
     <script src="{{ asset('js/home/home_onload.js', true) }}"></script>
+    <script src="{{ asset('js/search/search.js', true) }}"></script>
 @endsection

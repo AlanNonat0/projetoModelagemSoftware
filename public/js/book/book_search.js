@@ -1,7 +1,7 @@
 var globalResp = [];
 var atualPage = 1;
 
-$('form.home-search').on("submit",  function (event) {
+$('form[name="book-search"]').on("submit",  function (event) {
     event.preventDefault();
 
     $.ajaxSetup({
@@ -11,7 +11,7 @@ $('form.home-search').on("submit",  function (event) {
     });
 
     $.ajax({
-        url: baseUrl+"search",
+        url: baseUrl+"usuario/caderno/search",
         type: "GET",
         data: $(this).serialize(),
         dataType: "json",
@@ -24,18 +24,21 @@ $('form.home-search').on("submit",  function (event) {
                 globalResp.push(resp.slice(i,i+size));
             }
 
-           if(rendering(globalResp) === false){
-               home_onload()
-           }
+            let status = rendering(globalResp);                
             paginationRendering(globalResp)
 
-            $('#home-search-input').val("");
+            if(status === false){
+                book_onload()
+            }
+            console.log(status)
+            $('.search-input').val("");
         },
         error: function (request) {
             var title = 'Erro de Busca!'
-
             errorFromAjax(request,  title);
-            $('#home-search-input').val("");
+            $('.search-input').val("");
+            
         }
     });
 });
+

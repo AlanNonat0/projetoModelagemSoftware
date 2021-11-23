@@ -2,10 +2,13 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class BookRequest extends FormRequest
 {
+    protected $stopOnFirstFailure = true;
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -13,7 +16,10 @@ class BookRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        if(Auth::user()){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -24,7 +30,13 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "search" => "string|nullable"
+        ];
+    }
+
+    public function messages(){
+        return [
+            'search.string' => 'Termo inválido'
         ];
     }
 }
