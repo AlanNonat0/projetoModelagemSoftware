@@ -7,56 +7,52 @@
 @endsection
 
 @section('content')
+<div class="container-fluid">
     <div class="row d-flex justify-content-center mt-4">
         <div class=" col-lg-8 col-12 col-sm-12 col-xl-8">
             <h4 class="text-white text-center">Encontre aqui suas receitas salvas</h4>
-            <form class="form-control" action="" method="get">
+            <form class="form-control" action="" method="get" name="book-search">
                 <div class="row">
-                    <div class="col-lg-9 col-xl-9 col-sm-8 col-12">
-                        <input type="text" class="form-control mx-auto" placeholder="Digite aqui sua busca" name="buscar" />
-                    </div>
 
-                    <div class="col-lg-3 col-xl-3 col-sm-4 col-12">
-                        <select name="categoria" id="categoria" class="form-select">
+                    <div class="col-lg-3 col-xl-3 col-sm-3 d-none d-sm-block">
+                        <select name="category" id="category" class="form-select">
                             <option value="">Todos</option>
-                            <option value="refeicao">Refeição</option>
-                            <option value="salada">Salada</option>
-                            <option value="confeitaria">Confeitaria</option>
-                            <option value="bebida">Bebida</option>
+                            @foreach ($categories as $category)
+                            <option value="{{$category->id}}">{{$category->category}}</option>
+                            @endforeach
                         </select>
                     </div>
-                    <button type="submit" hidden="true" class="form-control" name="busca-caderno" value="search"></button>
+
+                    <div class="col-lg-7 col-xl-8 col-sm-7 col-9">
+                        <input type="text" class="form-control mx-auto search-input" placeholder="Digite aqui sua busca" name="search" />
+                    </div>
+                    <div class="col-lg-2 col-xl-1 col-sm-2 col-3">
+                        <button type="submit" class="form-control btn btn-outline-secondary" name="submit-book-search"><img src="{{ asset('img/search.png'), true }}" alt="Buscar" width="24" height="24" class="img-fluid"></button>
+                    </div>
 
                 </div>
             </form>
         </div>
     </div>
 
-    <div class="row mt-4">
-        {{-- @forelse ( as ) --}}
-        <div class="col-lg-3 col-sm-6 pb-2">
-            <div class="card bg bg-light">
-                <div class="card-header ">
-                    <h5 class="card-title">Nome da receita</h5>
-                </div>
-                <div class="card-body">
-
-                    <p class="card-text">Descricao</p>
-                    <div class="d-flex justify-content-end">
-                        <a href="" class="btn-block btn btn-outline-dark btn-sm">Confira aqui</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        {{-- @empty --}}
-
-        {{-- <div class="row d-flex justify-content-center mt-4">
-        <div class=" col-lg-8 col-12 col-sm-12 col-xl-8">
-            <h4 class="text-white text-center">Não foram encontradas receitas salvas</h4>
-        </div>
-    </div> --}}
-        {{-- @endforelse --}}
-
+    <!-- Recipes -->
+    <div class="row mt-4" id="recipeRender">
+        
     </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+
+        </ul>
+    </nav>
+
+
+</div>
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/book/book_search.js', true) }}"></script>
+    <script src="{{ asset('js/book/book_onload.js', true) }}"></script>
+    <script src="{{ asset('js/search/search.js', true) }}"></script>
 @endsection
