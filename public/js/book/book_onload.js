@@ -21,7 +21,7 @@ function book_onload(){
                         <h1 class='text-white text-center'>Suas receitas salvas aparecerão aqui</h1>
                     </div>
                 </div>`)
-
+                $('.pagination').addClass('d-none')
             } else {
                 rendering(globalResp);
                 paginationRendering(globalResp)
