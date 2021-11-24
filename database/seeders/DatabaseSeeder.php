@@ -14,10 +14,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            \Database\Seeders\CategorySeed::class,
-            \Database\Seeders\UserSeed::class,
-            \Database\Seeders\RecipeSeed::class,
-            \Database\Seeders\BookSeed::class
+            // \App\Models\User::factory(10)->create();
+            \Database\Seeders\CategorySeeder::class,
+            \Database\Seeders\UserSeeder::class,
+            \Database\Seeders\RecipeSeeder::class,
+            \Database\Seeders\BookSeeder::class
         ]);
+
+
     }
 }

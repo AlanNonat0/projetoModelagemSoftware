@@ -2,16 +2,23 @@
 
 namespace App\Repositories;
 
-use App\Models\Recipe;
-
 class RecipePreparationRepository extends RecipeRepository
 {
 
     public function findRecipe($id){
         $recipe = $this->find($id);
 
-        $recipe->ingredients = explode('\r\n', $recipe->ingredients);
-        $recipe->preparation = explode('\r\n', $recipe->preparation);
+        if(!$recipe){
+            return false;
+        }
+
+        $breakLine = count(explode('\r\n', $recipe->ingredients)) > 1;
+
+        $delimiter = '';
+        $breakLine? $delimiter = '\r\n' : $delimiter = PHP_EOL;
+
+        $recipe->ingredients = explode($delimiter, $recipe->ingredients);
+        $recipe->preparation = explode($delimiter, $recipe->preparation);
 
         return $recipe;
     }
