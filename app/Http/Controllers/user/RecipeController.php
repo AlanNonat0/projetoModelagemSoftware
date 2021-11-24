@@ -4,9 +4,16 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RecipeRequest;
+use App\Service\CategoryService;
+use App\Service\RecipeService;
 
 class RecipeController extends Controller
 {
+    public function __construct()
+    {
+        $this->categoryService = new CategoryService();
+        $this->recipeService = new RecipeService();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,8 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        return view('app.users.recipe');
+        $categories = $this->categoryService->categories();
+        return view('app.users.recipe', ['categories' => $categories]);
     }
 
     /**
@@ -35,7 +43,9 @@ class RecipeController extends Controller
      */
     public function store(RecipeRequest $request)
     {
-        //
+
+        $response = $this->recipeService->create($request);
+        return response()->json($response['data'], $response['code']) ;
     }
 
     /**

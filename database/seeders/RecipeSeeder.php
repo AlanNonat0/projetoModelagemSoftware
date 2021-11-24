@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Recipe;
 use Illuminate\Database\Seeder;
 
-class RecipeSeed extends Seeder
+class RecipeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,8 +15,7 @@ class RecipeSeed extends Seeder
     public function run()
     {
         $recipes = [
-            [
-                'id' => 1, 'created_by' => 'Alan Nonato',
+            [ 'created_by' => 'Alan Nonato',
                 'name' => 'BOLO DE FUBÁ COM GOIABADA',
                 'description' => 'delicioso bolo de fubá',
                 'category_id' => '1',
@@ -25,8 +24,7 @@ class RecipeSeed extends Seeder
                 'save' => 50,
                 'image' => 'default.png',
             ],
-            [
-                'id' => 2, 'created_by' => 'Ruth Danielle',
+            [ 'created_by' => 'Ruth Danielle',
                 'name' => 'BOLO DE FUBÁ',
                 'description' => 'bolo caseiro de fubá',
                 'category_id' => '1',
@@ -36,7 +34,6 @@ class RecipeSeed extends Seeder
                 'image' => 'default.png',
             ],
             [
-                'id' => 3,
                 'created_by' => 'Julio Gois',
                 'name' => 'Bolinho de chuva simples',
                 'description' => 'bolinho de chuva crocante',
@@ -47,7 +44,6 @@ class RecipeSeed extends Seeder
                 'image' => 'default.png',
             ],
             [
-                'id' => 4,
                 'created_by' => 'Alan Nonato',
                 'name' => 'BOLO TRUFADO',
                 'description' => 'Bolo delicioso de chocolate trufado decorado com cerejas',
@@ -58,7 +54,6 @@ class RecipeSeed extends Seeder
                 'image' => 'bolo.jpg',
             ],
             [
-                'id' => 5,
                 'created_by' => 'Julio Gois',
                 'name' => 'MASSA DE PIZZA',
                 'description' => 'Que tal surpreender com uma pizza caseira e cheia de sabor?!',
@@ -69,7 +64,6 @@ class RecipeSeed extends Seeder
                 'image' => 'pizza.jpg',
             ],
             [
-                'id' => 6,
                 'created_by' => 'Alan Nonato',
                 'name' => 'SOPA DE LENTILHA',
                 'description' => 'Sopa de lentilha repleta de temperos e sabores diferenciados.',
@@ -80,7 +74,6 @@ class RecipeSeed extends Seeder
                 'image' => 'sopa.jpg',
             ],
             [
-                'id' => 7,
                 'created_by' => 'Julio Gois',
                 'name' => 'MILKSHAKE DE MORANGO',
                 'description' => 'Colorido e delicioso. Perfeito para as crianças.',
@@ -91,7 +84,6 @@ class RecipeSeed extends Seeder
                 'image' => 'default.png',
             ],
             [
-                'id' => 8,
                 'created_by' => 'Alan Nonato',
                 'name' => 'ARROZ SOLTINHO',
                 'description' => 'Receita infalível para que seu arroz sempre fique bem soltinho.',
@@ -102,7 +94,6 @@ class RecipeSeed extends Seeder
                 'image' => 'arroz.jpg',
             ],
             [
-                'id' => 9,
                 'created_by' => 'Ruth Danielle',
                 'name' => 'HAMBÚRGUER ARTESANAL',
                 'description' => 'Receita clássica capaz de conquistar todos os paladares.',
@@ -113,7 +104,6 @@ class RecipeSeed extends Seeder
                 'image' => 'default.png',
             ],
             [
-                'id' => 10,
                 'created_by' => 'Ruth Danielle',
                 'name' => 'TORTA DE MAÇÃ',
                 'description' => 'Receita queridinha. Ideal para dias mais frios.',
@@ -124,7 +114,6 @@ class RecipeSeed extends Seeder
                 'image' => 'torta.jpg',
             ],
             [
-                'id' => 11,
                 'created_by' => 'Julio Gois',
                 'name' => 'CAFÉ COLOMBIANO',
                 'description' => 'Café diferenciado de sabor intenso.',

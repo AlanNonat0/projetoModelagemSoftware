@@ -13,6 +13,7 @@ class Recipe extends Model
         'name',
         'created_by',
         'description',
+        'category_id',
         'ingredients',
         'preparation',
         'save',

@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-class UserSeed extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,6 @@ class UserSeed extends Seeder
     {
         $users = [
            [
-               'id' => 1,
                'name' => 'Alan Nonato',
                'telephone' => '11900000000',
                'email' => 'alan@email.com',
@@ -26,7 +25,6 @@ class UserSeed extends Seeder
                 'type' => 1
             ],
             [
-                'id' => 2,
                 'name' => 'Ruth Danielle',
                 'telephone' => '11999990000',
                 'email' => 'ruth@email.com',
@@ -35,7 +33,6 @@ class UserSeed extends Seeder
                 'type' => 1
             ],
             [
-                'id' =>3,
                 'name' => 'Julio Gois',
                 'telephone' => '11900000000',
                 'email' =>  'julio@email.com',
