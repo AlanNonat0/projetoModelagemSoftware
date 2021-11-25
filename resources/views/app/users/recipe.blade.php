@@ -76,4 +76,5 @@
 
 @section('script')
     <script src="{{ asset('js/book/recipe_new.js', true) }}"></script>
+    <script src="{{ asset('js/book/recipe_save.js', true) }}"></script>
 @endsection

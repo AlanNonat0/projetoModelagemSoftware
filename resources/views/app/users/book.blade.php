@@ -37,7 +37,7 @@
 
     <!-- Recipes -->
     <div class="row mt-4" id="recipeRender">
-        
+
     </div>
 
     <!-- Pagination -->
@@ -54,5 +54,6 @@
 @section('script')
     <script src="{{ asset('js/book/book_search.js', true) }}"></script>
     <script src="{{ asset('js/book/book_onload.js', true) }}"></script>
+    <script src="{{ asset('js/book/recipe_save.js', true) }}"></script>
     <script src="{{ asset('js/search/search.js', true) }}"></script>
 @endsection

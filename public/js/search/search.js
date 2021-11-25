@@ -47,7 +47,7 @@ function paginate(page){
 }
 
 // renderiza as receitas na tela
-function rendering(resp, page = 0){
+function rendering(resp,page = 0){
     $('#recipeRender').html("");
     $('.pagination').html("");
     let html = '';
@@ -61,22 +61,24 @@ function rendering(resp, page = 0){
 
     for(let i = 0; i< recipes.length; i++) {
 
+        let recipeId = isBook? recipes[i].recipe_id :recipes[i].id;
         html += `
 
-        <div class="col-lg-3 col-sm-6 pb-2" id="recipeRender">
-        <form name="save-recipe">
+        <div class="col-lg-3 col-sm-6 pb-2" id="recipeRender_`+recipeId+`">
+        <form class="save-recipe">
         <div class="card border border-dark" style="height: 367.84px !important;">
- 
+
         <img src="`+baseUrl+`storage/recipe/`+recipes[i].image+`" class="card-img-top recipeimage" alt="`+recipes[i].name+`" style="min-height: 206.84px !important">
         <div class="card-body">
             <h5 class="card-title">`+recipes[i].name+`</h5>
             <p class="card-text text-inline">`+recipes[i].description+`</p>
 
             <div class=" mb-auto float-start col-2">
-            <button type="submit" name="recipe_id" value="`+recipes[i].id+`"  class="btn btn-outline-light float-left"><img class="img-fluid" src="`+baseUrl+`img/salvar.png" alt="Salvar" width="24" height="24"></button>
-        </div>  
+            <input type="hidden" value="`+recipeId+`" name="recipe_id"/>
+            <button type="submit"  class="btn btn-outline-light float-left"><img class="img-fluid save-recipe-image" src="`+baseUrl+`img/salvar.png" alt="Salvar" width="24" height="24"></button>
+        </div>
             <div class="my-auto d-flex justify-content-end">
-                <a href="`+baseUrl+`preparo/`+recipes[i].id+`" class="btn-block btn btn-outline-dark btn-sm">Confira aqui</a>
+                <a href="`+baseUrl+`preparo/`+recipeId+`" class="btn-block btn btn-outline-dark btn-sm">Confira aqui</a>
             </div>
 
         </div>

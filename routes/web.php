@@ -50,6 +50,7 @@ Route::middleware('auth')->prefix('usuario')->group(function () {
     // Caderno
     Route::get('caderno', [BookController::class, 'index'])->name('caderno.index');
     Route::get('caderno/search', [BookController::class, 'search'])->name('caderno.search');
+    Route::post('caderno/save', [BookController::class, 'store'])->name('caderno.store');
 
     // Receitas
     Route::resource('receita', RecipeController::class);

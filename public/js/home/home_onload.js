@@ -8,7 +8,7 @@ function home_onload(){
 
         success: function (resp) {
             globalResp = [];
-
+            isBook = false;
             var size = 8;
             for(let i = 0; i < resp.length; i+=size){
                 globalResp.push(resp.slice(i,i+size));

@@ -25,7 +25,7 @@ function errorRendering(title, statusCode, errorMessage){
     $("#error-message").append(errorMessage);
 
     var options = {
-        delay: 3000,
+        delay: 3500,
     };
     var showToast = document.getElementById('toastErrors');
     var bsToast = new bootstrap.Toast(showToast, options);
