@@ -34,4 +34,21 @@ class BookController extends Controller
         return response()->json($data);
     }
 
+    public function store(BookRequest $request){
+
+        $user = Auth::user();
+        $recipeId = $request->get("recipe_id");
+
+        if ($this->service->checkBook($recipeId, $user)) {
+
+            $response = $this->service->remove($recipeId, $user->id);
+
+        } else {
+
+            $response = $this->service->store($request, $user);
+        }
+
+        return response()->json($response['data'], $response['code']) ;
+    }
+
 }

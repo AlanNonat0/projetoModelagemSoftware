@@ -30,7 +30,8 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            "search" => "string|nullable"
+            "search" => "string|nullable",
+            "recipe_id" => "integer"
         ];
     }
 

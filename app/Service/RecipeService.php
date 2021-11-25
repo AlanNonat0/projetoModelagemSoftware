@@ -14,12 +14,18 @@ class RecipeService
     public function __construct()
     {
         $this->repository = new RecipeRepository();
+        $this->service = new BookService();
     }
 
     public function search($search, $maxPages = 5)
     {
         if (isset($search) || $search == null) {
-            return $this->repository->search($search, $maxPages);
+            $status = $this->repository->search($search, $maxPages);
+            if ($status === false) {
+                return AlertService::sendError("Erro de conexão com o servidor, tente novamente em alguns instantes", 500);
+            }
+
+            return $status;
         }
     }
 
@@ -45,6 +51,7 @@ class RecipeService
         }
 
         if ($status) {
+            $this->service->store($status->id, $user);
             return ['data' => ['status' => 'success', 'data' => $status], 'code' => 201];
         }
 

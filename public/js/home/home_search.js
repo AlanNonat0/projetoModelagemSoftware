@@ -1,6 +1,3 @@
-var globalResp = [];
-var atualPage = 1;
-
 $('form.home-search').on("submit",  function (event) {
     event.preventDefault();
 
@@ -18,6 +15,7 @@ $('form.home-search').on("submit",  function (event) {
 
         success: function (resp) {
             globalResp = [];
+            isBook = false;
 
             var size = 8;
             for(let i = 0; i < resp.length; i+=size){

@@ -17,7 +17,7 @@ $('form[name="personalDataUpdate"]').on("submit",  function (event) {
 
         success: function (resp) {
 
-            var data = resp.data; 
+            var data = resp.data;
             var date = data.updated_at.slice(0, 10);
             date = date.split('-')
             date = date[2]+'-'+date[1]+'-'+date[0];
@@ -31,7 +31,7 @@ $('form[name="personalDataUpdate"]').on("submit",  function (event) {
         error: function (request) {
             var title = 'Erro ao Atualizar dados!'
             errorFromAjax(request,  title);
-            
+
         }
     });
 });

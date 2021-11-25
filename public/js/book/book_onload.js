@@ -8,6 +8,7 @@ function book_onload(){
 
         success: function (resp) {
             globalResp = [];
+            isBook = true;
 
             var size = 8;
             for(let i = 0; i < resp.length; i+=size){
