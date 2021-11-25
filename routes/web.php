@@ -55,5 +55,7 @@ Route::middleware('auth')->prefix('usuario')->group(function () {
     Route::resource('receita', RecipeController::class);
 
     // Dados Pessoais
-    Route::resource('atualizar', PersonalDataController::class);
+    Route::get('atualizar', [PersonalDataController::class, 'index'])->name('atualizar.index');
+    Route::put('atualizar', [PersonalDataController::class, 'update'])->name('atualizar.update');
+    Route::patch('atualizar', [PersonalDataController::class, 'update'])->name('atualizar.update');
 });

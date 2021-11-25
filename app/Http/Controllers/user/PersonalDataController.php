@@ -3,10 +3,16 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PersonalDataRequest;
+use App\Service\PersonalDataService;
 
 class PersonalDataController extends Controller
 {
+    public function __construct()
+    {
+        $this->service = new PersonalDataService();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,8 @@ class PersonalDataController extends Controller
      */
     public function index()
     {
-        return view('app.users.personaldata');
+        $user = Auth::user()? Auth::user() : null;
+        return view('app.users.personaldata',['user' => $user]);
     }
 
     /**
@@ -67,9 +74,11 @@ class PersonalDataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PersonalDataRequest $request, $id)
+    public function update(PersonalDataRequest $request)
     {
-        //
+        $user = Auth::user();
+        $response = $this->service->update($request, $user);
+        return response()->json($response['data'], $response['code']) ;
     }
 
     /**
