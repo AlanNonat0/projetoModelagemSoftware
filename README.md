@@ -27,4 +27,29 @@ Para o back-end foi utilizado PHP 7 e frameowrk laravel 8.
 
 ![image](https://user-images.githubusercontent.com/72157212/143515160-d1c9b9d5-13e4-45b2-abe9-00191e92b070.png)
 
+- Login e Cadastro
+
+![image](https://user-images.githubusercontent.com/72157212/143515612-2e31d685-66b6-45db-bcb4-77beb47f9a1f.png)
+
+- Área do usuário 
+
+![image](https://user-images.githubusercontent.com/72157212/143515835-5cfbb926-58ca-4878-b44f-c0df9dda89cd.png)
+
+- Modo de Preparo
+
+![image](https://user-images.githubusercontent.com/72157212/143516102-08136f53-2598-4412-9630-469a02892d49.png)
+
+- Atualizar dados
+
+![image](https://user-images.githubusercontent.com/72157212/143516215-0aeec0fd-d237-4c1e-b314-6c6187a03bbf.png)
+
+- Envio de Receita
+
+![image](https://user-images.githubusercontent.com/72157212/143516445-6bcba622-6659-4b0c-b664-bf30a0e2c2c0.png)
+
+
+
+
+
+
 
