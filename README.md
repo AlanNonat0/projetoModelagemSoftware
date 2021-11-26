@@ -2,7 +2,7 @@
 Projeto Acadêmico de Modelagem de sistemas de software.
 
 ## Sobre
-Projeto desenvolvido para atender uma demanda especifica relacionada a armazenamento de receitas e o compartilhamento das mesmas. Na plataforma é possível navegar e buscar receitas de forma colaborativa e eficiente, tendo em vista um grande fluxo de colaboração entre usuários possibilitando uma maior variedade de receitas a serem divulgadas e adicionadas aos cadernos individuais de cada usuário. Na area do usuário é possível enviar novas receitas e gerencia-las.
+Projeto desenvolvido para atender uma demanda especifica relacionada a armazenamento de receitas e o compartilhamento das mesmas. Na plataforma é possível navegar e buscar receitas de forma colaborativa e eficiente, tendo em vista um grande fluxo de colaboração entre usuários possibilitando uma maior variedade de receitas a serem divulgadas e adicionadas aos cadernos individuais de cada usuário. Na área do usuário é possível enviar novas receitas e gerencia-las.
 
 ## Tecnologias utilizadas
 Foram utilizadas diversas tecnologias para o desenvolvimento da plataforma.
@@ -19,7 +19,7 @@ Foi utilizado o banco de dados relacional postgreSql encontra-se em uma platafor
 Para o front-end, foram utilizadas linguagens, HTML, CSS e JavaScript com auxilio do framework bootstrap 5 e jquery utilizando do ajax.
 
 ### Back-End
-Para o back-end foi utilizado PHP 7 e frameowrk laravel 8.
+Para o back-end foi utilizado PHP 7 e frameowrk laravel 8 hospedados em nuvem e conta com certificado SSL.
 
 ## Imagens do Sistema
 
@@ -47,7 +47,8 @@ Para o back-end foi utilizado PHP 7 e frameowrk laravel 8.
 
 ![image](https://user-images.githubusercontent.com/72157212/143516445-6bcba622-6659-4b0c-b664-bf30a0e2c2c0.png)
 
-
+## Acesso
+O sistema pode ser acessado pelo link https://projetomodelagemsoftware.herokuapp.com/
 
 
 
